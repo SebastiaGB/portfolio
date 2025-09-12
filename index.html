@@ -1,245 +1,189 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sebastià Gamundí - Engineer</title>
-    <meta name="description" content="Portfolio profesional de Sebastià Gamundí, especialista en IoT y monitorización con enfoque al cloud y soluciones escalables en AWS">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sebastià Gamundí - Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Fuente monospace para snippet -->
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Hero Section -->
-    <section id="hero" class="hero">
-        <div class="hero-background">
-            <div class="particles-container" id="particles"></div>
-            <div class="floating-shapes">
-                <div class="shape shape-1"></div>
-                <div class="shape shape-2"></div>
-                <div class="shape shape-3"></div>
-                <div class="shape shape-4"></div>
-            </div>
+
+  <!-- ================= Hero ================= -->
+  <section id="hero">
+    <div class="hero-left">
+      <h1>Construyendo soluciones conectadas: del IoT a la nube</h1>
+      <p>
+        Especialista en IoT y monitorización de infraestructuras con enfoque en Cloud Computing. 
+        Apasionado por la automatización y la creación de soluciones eficientes que mejoran la observabilidad, 
+        la escalabilidad y la integración en la nube.
+      </p>
+
+      <!-- Perfil -->
+      <div class="hero-profile">
+        <img src="imagenes/sebastia_gamundi.jpg" alt="Sebastián Gamundi">
+        <div class="profile-info">
+          <h3>Ingeniero Telemático</h3>
+          <p><i class="fas fa-cloud"></i> Cloud Enthusiast</p>
         </div>
-        <div class="hero-content">
-            <div class="hero-text fade-in">
-                <div class="hero-badge">
-                    <i class="fas fa-cloud"></i>
-                    <span>Telematics Engineer</span>
-                </div>
-                <h1 class="hero-title">
-                    Construyendo soluciones conectadas <span class="gradient-text">del IoT a la nube</span>
-                </h1>
-                <p class="hero-description">
-                    Especialista en IoT y monitorización de infraestructuras con enfoque en cloud computing. 
-                    Me motiva la automatización y la creación de soluciones eficientes que mejoren la observabilidad, 
-                    la escalabilidad y la integración de sistemas en la nube.
-                </p>
-                
-                <!-- Personal Presentation within Hero -->
-                <div class="hero-presentation">
-                    <div class="profile-image-container">
-                        <img src="imagenes/Sebastia_Gamundi.jpg" alt="Sebastià Gamundí" class="profile-image">
-                        <div class="profile-border"></div>
-                    </div>
-                    <div class="profile-info">
-                        <h2 class="profile-name">Sebastià Gamundí</h2>
-                        <p class="profile-title">Telematics Engineer</p>
-                    </div>
-                </div>
-                
-                <div class="hero-buttons">
-                    <button class="btn btn-primary btn-lg" onclick="scrollToSection('projects')">
-                        <i class="fas fa-rocket"></i>
-                        Ver Proyectos
-                    </button>
-                    <button class="btn btn-outline btn-lg" onclick="scrollToSection('contact')">
-                        <i class="fas fa-envelope"></i>
-                        Contactar
-                    </button>
-                </div>
-            </div>
-            <div class="hero-visual fade-in-delay">
-                <div class="floating-card">
-                    <div class="card-header">
-                        <div class="card-dots">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <div class="code-snippet">
-                            <div class="code-line"><span class="keyword">class</span> <span class="class-name">FutureCloudEngineer</span> {</div>
-                            <div class="code-line">  <span class="keyword">constructor</span>() {</div>
-                            <div class="code-line">    <span class="keyword">this</span>.<span class="property">name</span> = <span class="string">'Sebastià Gamundí'</span>;</div>
-                            <div class="code-line">    <span class="keyword">this</span>.<span class="property">expertise</span> = [</div>
-                            <div class="code-line">      <span class="string">'AWS'</span>, <span class="string">'Docker'</span>, <span class="string">'Kubernetes'</span>, <span class="string">'Terraform'</span></div>
-                            <div class="code-line">    ];</div>
-                            <div class="code-line">    <span class="keyword">this</span>.<span class="property">passion</span> = <span class="string">'Cloud Solutions'</span>;</div>
-                            <div class="code-line">  }</div>
-                            <div class="code-line">}</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tech-stack">
-                    <div class="tech-item" data-tech="AWS">
-                        <i class="fab fa-aws"></i>
-                </div>
-                    <div class="tech-item" data-tech="Docker">
-                        <i class="fab fa-docker"></i>
-            </div>
-                    <div class="tech-item" data-tech="Kubernetes">
-                        <i class="fas fa-cube"></i>
-                </div>
-                </div>
-            </div>
-        </div>
-        <div class="scroll-indicator" onclick="scrollToSection('projects')">
-            <div class="scroll-text">Desliza para explorar</div>
-            <div class="scroll-arrow">
-                <i class="fas fa-chevron-down"></i>
-            </div>
-        </div>
-    </section>
+      </div>
 
+      <!-- Botones -->
+      <div class="hero-buttons">
+        <button onclick="scrollToSection('projects')">
+          <i class="fas fa-laptop-code"></i> Proyectos
+        </button>
+        <button onclick="scrollToSection('contact')">
+          <i class="fas fa-phone"></i> Contacto
+        </button>
+      </div>
 
-
-
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-badge">
-                    <i class="fas fa-project-diagram"></i>
-                    <span>Proyectos</span>
-                </div>
-                <h2 class="section-title">Soluciones que transforman negocios</h2>
-                <p class="section-subtitle">Proyectos que demuestran mi experiencia cloud</p>
-            </div>
-            <div class="projects-filter">
-                <button class="filter-btn active" data-filter="all">
-                    <i class="fas fa-th"></i>
-                    Todos
-                </button>
-                <button class="filter-btn" data-filter="Básico">
-                    <i class="fas fa-star"></i>
-                    Básico
-                </button>
-                <button class="filter-btn" data-filter="Avanzado">
-                    <i class="fas fa-rocket"></i>
-                    Avanzado
-                </button>
-                <button class="filter-btn" data-filter="Profesional">
-                    <i class="fas fa-crown"></i>
-                    Profesional
-                </button>
-            </div>
-            <div class="projects-grid" id="projectsGrid">
-                <!-- Projects will be loaded by JavaScript -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-badge">
-                    <i class="fas fa-envelope"></i>
-                    <span>Contacto</span>
-                </div>
-                <h2 class="section-title">¿Quieres experimentar con soluciones cloud?</h2>
-                <p class="section-subtitle">Conecta conmigo y descubramos cómo mis proyectos y conocimientos en cloud pueden sumar a tus ideas.</p>
-            </div>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-card">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h3>Email</h3>
-                            <p>gamun747@gmail.com</p>
-                            <a href="mailto:gamun747@gmail.com" class="contact-link">Enviar Email</a>
-                        </div>
-                    </div>
-                    <div class="contact-card">
-                        <div class="contact-icon">
-                            <i class="fab fa-linkedin"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h3>LinkedIn</h3>
-                            <p>Conecta profesionalmente</p>
-                            <a href="https://www.linkedin.com/in/sebastià-gamundí-beneyto/" target="_blank" class="contact-link">Ver Perfil</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Project Modal -->
-    <div id="projectModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 id="modalTitle"></h2>
-            <span class="modal-close">&times;</span>
-            </div>
-            <div class="modal-body">
-                <div class="modal-image-container">
-                <img id="modalImage" src="" alt="" class="modal-image">
-                </div>
-                <div class="modal-info">
-                    <p id="modalDescription"></p>
-                    <div class="modal-technologies" id="modalTechnologies"></div>
-                    <div class="modal-buttons">
-                        <a id="modalGithub" href="#" target="_blank" class="btn btn-primary">
-                            <i class="fab fa-github"></i>
-                            Ver Código
-                        </a>
-                        <a id="modalDemo" href="#" target="_blank" class="btn btn-outline">
-                            <i class="fas fa-external-link-alt"></i>
-                            Ver Demo
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
+      <!-- Tech Stack -->
+      <div class="tech-stack">
+        <div class="tech-item"><i class="fab fa-aws"></i></div>
+        <div class="tech-item"><i class="fab fa-docker"></i></div>
+        <div class="tech-item"><i class="fas fa-cube"></i></div>
+        <div class="tech-item"><i class="fab fa-python"></i></div>
+      </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <p>Transformando ideas en soluciones cloud escalables</p>
-                </div>
-                <div class="footer-links">
-                    <div class="footer-section">
-                        <h4>Navegación</h4>
-                        <ul>
-                            <li><a href="#hero">Inicio</a></li>
-                            <li><a href="#projects">Proyectos</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-section">
-                        <h4>Contacto</h4>
-                        <ul>
-                            <li><a href="mailto:gamun747@gmail.com">Email</a></li>
-                            <li><a href="https://www.linkedin.com/in/sebastià-gamundí-beneyto" target="_blank">LinkedIn</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Sebastià Gamundí | Todos los derechos reservados.</p>
-            </div>
+    <div class="hero-right">
+      <!-- Code Snippet Card -->
+      <div class="code-editor-card floating">
+        <div class="code-header">
+          <div class="dot red"></div>
+          <div class="dot yellow"></div>
+          <div class="dot green"></div>
+          <span class="filename">CloudEngineer.js</span>
         </div>
-    </footer>
 
-    <script src="projects-config.js"></script>
-    <script src="script.js"></script>
+        <div class="code-content">
+          <div class="code-line"><span class="keyword">class</span> <span class="class-name">CloudEngineer</span> {</div>
+          <div class="code-line">  <span class="keyword">constructor</span>() {</div>
+          <div class="code-line">    <span class="this">this</span>.<span class="property">name</span> = <span class="string">'Sebastià Gamundí'</span>;</div>
+          <div class="code-line">    <span class="this">this</span>.<span class="property">learning</span> = [<span class="string">'AWS'</span>, <span class="string">'Terraform'</span>];</div>
+          <div class="code-line">    <span class="this">this</span>.<span class="property">familiarWith</span> = [<span class="string">'Kubernetes'</span>];</div>
+          <div class="code-line">    <span class="this">this</span>.<span class="property">handsOn</span> = [<span class="string">'Docker'</span>];</div>
+          <div class="code-line">    <span class="this">this</span>.<span class="property">passion</span> = <span class="string">'Cloud Solutions'</span>;</div>
+          <div class="code-line">  }</div>
+          <div class="code-line">}</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= Main ================= -->
+  <main id="main-content">
+
+    <!-- Proyectos -->
+    <section id="projects">
+      <h2><i class="fas fa-laptop-code"></i> Proyectos</h2>
+      <p class="section-subtitle">
+        Proyectos que demuestran mi experiencia en <strong>Cloud</strong>
+      </p>
+
+      <div id="tabs">
+        <button class="tab active" data-filter="Todos">Todos</button>
+        <button class="tab" data-filter="Básico">Básico</button>
+        <button class="tab" data-filter="Avanzado">Avanzado</button>
+        <button class="tab" data-filter="Profesional">Profesional</button>
+      </div>
+
+      <div id="projects-container"></div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contact">
+      <h2><i class="fas fa-phone"></i> Contacto</h2>
+      <p class="section-subtitle">
+        Conecta conmigo y descubramos cómo mis proyectos y conocimientos en <strong>Cloud</strong> pueden sumar a tus ideas.
+      </p>
+
+      <div class="contact-links">
+        <a href="https://www.linkedin.com/in/sebastia-gamundi" class="contact-box" target="_blank">
+          <div class="icon-circle"><i class="fab fa-linkedin"></i></div>
+          <span>LinkedIn</span>
+          <small>linkedin.com/in/sebastia-gamundi</small>
+        </a>
+
+        <a href="mailto:gamun747@gmail.com" class="contact-box" target="_blank">
+          <div class="icon-circle"><i class="fas fa-envelope"></i></div>
+          <span>Email</span>
+          <small>gamun747@gmail.com</small>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= Footer ================= -->
+  <footer>
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/sebastia-gamundi" target="_blank">
+        <i class="fab fa-linkedin"></i> LinkedIn
+      </a>
+      <a href="https://github.com/SebastiaGB" target="_blank">
+        <i class="fab fa-github"></i> GitHub
+      </a>
+      <a href="mailto:gamun747@gmail.com" target="_blank" rel="noopener noreferrer">
+        <i class="fas fa-envelope"></i> Gmail
+      </a>
+    </div>
+
+    <div class="footer-copy">
+      <p>© 2025 Sebastià Gamundi - Portfolio</p>
+    </div>
+  </footer>
+
+  <!-- Botón volver arriba -->
+  <button id="back-to-top" title="Volver arriba" aria-label="Volver al inicio">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- Modal -->
+  <div id="project-modal">
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      <h2 id="modal-title"></h2>
+      <div class="modal-body">
+        
+        <!-- Columna izquierda -->
+        <div class="modal-image-wrapper">
+          <img id="modal-image" src="" alt="Imagen del proyecto">
+        </div>
+
+        <!-- Columna derecha -->
+        <div class="modal-info">
+          <!-- Texto centrado en vertical -->
+          <div class="modal-details-wrapper">
+            <p id="modal-details"></p>
+          </div>
+
+          <!-- Tecnologías + botones abajo -->
+          <div class="modal-actions">
+            <div id="modal-tech" class="modal-tech"></div>
+            <div class="modal-buttons">
+              <a id="modal-github" href="#" target="_blank">
+                <i class="fab fa-github"></i> GitHub
+              </a>
+              <a id="modal-demo" href="#" target="_blank">
+                <i class="fas fa-external-link-alt"></i> Demo
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="projects.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
