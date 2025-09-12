@@ -13,6 +13,7 @@ portfolio/
 ```
 
 ## Ver el portfolio online
-👉 <a href="https://sebastiagb.github.io/portfolio/" target="_blank">Mi portfolio</a> 
+👉 [Mi portfolio](https://sebastiagb.github.io/portfolio/) _(abrir en nueva pestaña)_
+
 
 
