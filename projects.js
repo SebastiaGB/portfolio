@@ -24,7 +24,7 @@ const projects = [
     },
     { id: 3,
         title: "Aplicación Web con Angular desplegada en AWS",
-        description: "nfjwejfbwejfjwbjwbjf",
+        description: "nfjwejfbwejfjwbjwbnjlnljnjlnlnjlnjlnljnljnnknknlkjnlknlknlknklnklnlknklnlknnlkjf",
         details: "bfwejbkfjbjjfbekjfjbejbjfbejkbfkjbejkbfjebkfjbekjbkjfbejkbfjkbkjebkjfbekjbfkjebkjbfkjebjkbfkjebjkfbjkebfkjbekjfbjkebkjfbekjbfkjbekjfbkjebfjkebkjefbkjbekjbfkjebkjebfkjebkjfbkjebj",
         image: "imagenes/App_Web_Desplegada_AWS.jpg",
         technologies: ["nfjwejfkw", "fefffefe", "fefeefef", "fefefefefeff"],

@@ -760,6 +760,12 @@ footer {
   #modal-title {
     font-size: 1.3rem;
     margin-bottom: 0.8rem;
+    text-align: center;
+  }
+
+  /* Ocultar imagen en móviles */
+  .modal-image-wrapper {
+    display: none;
   }
 
   .modal-body {
@@ -767,12 +773,6 @@ footer {
     align-items: center;
     text-align: center;
     gap: 0.8rem;
-  }
-
-  .modal-image-wrapper img {
-    max-width: 220px;
-    height: 120px;
-    border-radius: 10px;
   }
 
   .modal-info {
@@ -784,19 +784,29 @@ footer {
     font-size: 0.9rem;
     line-height: 1.4;
     margin-bottom: 0.8rem;
+    word-break: break-word;  
+    white-space: normal;      
   }
 
-  /* Chips más pequeños */
+  /* Chips más pequeños y en varias filas */
+  .modal-tech {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
   .modal-tech .tech-chip {
     font-size: 0.75rem;
     padding: 3px 8px;
     border-radius: 6px;
   }
 
-  /* Botones */
+  /* Botones más compactos y que fluyan en varias filas */
   .modal-buttons {
     flex-wrap: wrap;
     justify-content: center;
+    gap: 0.6rem;
   }
 
   .modal-buttons a {
