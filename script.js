@@ -16,57 +16,78 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let lastFocusedElement = null; // para focus trap
 
+  // ====================== Notificación ======================
+  function showNotification(message) {
+    const notif = document.createElement("div");
+    notif.className = "notification";
+    notif.innerHTML = `<i class="fas fa-info-circle"></i> ${message}`;
+    document.body.appendChild(notif);
+
+    // trigger animación
+    setTimeout(() => notif.classList.add("show"), 10);
+
+    // desaparecer
+    setTimeout(() => {
+      notif.classList.remove("show");
+      setTimeout(() => notif.remove(), 300);
+    }, 3000);
+  }
+
   // ====================== Modal ======================
   function openModal(projectId) {
     const project = projects.find((p) => p.id === projectId);
     if (!project) return;
 
-    // Guardar elemento que tenía el foco
     lastFocusedElement = document.activeElement;
 
-    // Contenido dinámico
     modalTitle.textContent = project.title;
     modalImage.src = project.image;
     modalImage.alt = project.title;
     modalDetails.innerHTML = `<p>${project.details || ""}</p>`;
 
-    // Tecnologías (chips)
     modalTech.innerHTML = project.technologies?.length
       ? project.technologies.map((tech) => `<span class="tech-chip">${tech}</span>`).join("")
       : "";
 
     // Botones
-    modalGithub.style.display = project.github ? "inline-block" : "none";
-    modalDemo.style.display = project.demo ? "inline-block" : "none";
-    if (project.github) modalGithub.href = project.github;
-    if (project.demo) modalDemo.href = project.demo;
+    modalGithub.style.display = "inline-block";
+    modalDemo.style.display = "inline-block";
+    modalGithub.href = project.github || "#";
+    modalDemo.href = project.demo || "#";
 
-    // Accesibilidad
+    // Eventos de botones del modal
+    modalGithub.onclick = (e) => {
+      if (!project.github || project.github === "#") {
+        e.preventDefault();
+        showNotification(" Este proyecto no tiene repositorio GitHub todavía.");
+      }
+    };
+    modalDemo.onclick = (e) => {
+      if (!project.demo || project.demo === "#") {
+        e.preventDefault();
+        showNotification(" Este proyecto no tiene demo disponible todavía.");
+      }
+    };
+
     modal.setAttribute("aria-hidden", "false");
     modal.setAttribute("role", "dialog");
     modal.setAttribute("aria-modal", "true");
     modal.style.display = "flex";
 
-    // Enfocar modal
     modal.querySelector(".modal-close").focus();
   }
 
   function closeModal() {
     modal.style.display = "none";
     modal.setAttribute("aria-hidden", "true");
-
-    // Devolver foco al último elemento
     if (lastFocusedElement) lastFocusedElement.focus();
   }
 
-  // ===== Eventos de cerrar modal =====
   modalClose.addEventListener("click", closeModal);
 
-  // Cerrar con tecla ESC
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeModal();
 
-    // Focus trap dentro del modal
     if (e.key === "Tab" && modal.style.display === "flex") {
       const focusable = modal.querySelectorAll("a, button, [tabindex]:not([tabindex='-1'])");
       const first = focusable[0];
@@ -89,7 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   window.scrollToSection = scrollToSection;
 
-  // ====================== Botón volver arriba con IntersectionObserver ======================
+  // ====================== Botón volver arriba ======================
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -136,23 +157,40 @@ document.addEventListener("DOMContentLoaded", () => {
           <h3>${proj.title}</h3>
           ${proj.description ? `<p>${proj.description}</p>` : ""}
           <div class="project-links">
-            ${proj.github ? `<a href="${proj.github}" target="_blank" class="btn-link"><i class="fab fa-github"></i> GitHub</a>` : ""}
-            ${proj.demo ? `<a href="${proj.demo}" target="_blank" class="btn-link"><i class="fas fa-external-link-alt"></i> Demo</a>` : ""}
+            ${proj.github ? `<a href="${proj.github}" target="_blank" class="btn-link github"><i class="fab fa-github"></i> GitHub</a>` : ""}
+            ${proj.demo  ? `<a href="${proj.demo}"  target="_blank" class="btn-link demo"><i class="fas fa-external-link-alt"></i> Demo</a>` : ""}
           </div>
         </div>
       `;
 
-      // Animación fade-in escalonada
       setTimeout(() => card.classList.add("show"), index * 150);
 
-      // Evento para abrir modal
+      // Click en la tarjeta abre modal
       card.addEventListener("click", () => openModal(proj.id));
-
       container.appendChild(card);
+
+      // --- Enlaces dentro de la tarjeta ---
+      const cardLinks = card.querySelectorAll(".project-links a");
+      cardLinks.forEach((a) => {
+        // Evitar que el click en un link abra el modal
+        a.addEventListener("click", (e) => e.stopPropagation());
+
+        const href = a.getAttribute("href");
+        const isGithub = a.classList.contains("github");
+        const isDemo = a.classList.contains("demo");
+
+        if (!href || href === "#" || href.trim() === "" || href.startsWith("javascript:")) {
+          a.addEventListener("click", (e) => {
+            e.preventDefault();
+            if (isGithub) showNotification("🚫 Este proyecto no tiene repositorio GitHub todavía.");
+            if (isDemo) showNotification("🚫 Este proyecto no tiene demo disponible todavía.");
+          });
+        }
+      });
     });
   }
 
-  // ====================== Tabs de filtrado con localStorage ======================
+  // ====================== Tabs ======================
   const savedFilter = localStorage.getItem("selectedTab") || "Todos";
 
   function applyFilter(filter) {
@@ -174,7 +212,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Render inicial con filtro guardado
   tabs.forEach((tab) => {
     if (tab.getAttribute("data-filter") === savedFilter) {
       tab.classList.add("active");

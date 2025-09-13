@@ -698,7 +698,7 @@ footer {
   font-weight: 500;
 }
 
-/* Botones modal */
+/* ================= Botones modal ================= */
 .modal-buttons {
   display: flex;
   gap: 1rem;
@@ -710,16 +710,23 @@ footer {
   font-size: 0.9rem;
   text-decoration: none;
   font-weight: 600;
-  transition: 0.3s ease;
+  cursor: pointer; 
+  transition: background 0.3s ease, transform 0.2s ease, opacity 0.2s ease;
 }
 
+/* GitHub */
 .modal-buttons a:first-of-type {
   background: #3b82f6;
   color: #fff;
 }
 
-.modal-buttons a:first-of-type:hover { background: #2563eb; }
+.modal-buttons a:first-of-type:hover {
+  background: #2563eb;
+  transform: scale(1.05);
+  opacity: 0.95;
+}
 
+/* Demo */
 .modal-buttons a:last-of-type {
   border: 2px solid #3b82f6;
   color: #3b82f6;
@@ -729,6 +736,8 @@ footer {
 .modal-buttons a:last-of-type:hover {
   background: #3b82f6;
   color: #fff;
+  transform: scale(1.05);
+  opacity: 0.95;
 }
 
 /* Modal Responsive */
@@ -743,6 +752,36 @@ footer {
   .modal-info { width: 100%; align-items: center; }
   .modal-info p { text-align: center; }
   .modal-buttons { justify-content: center; }
+}
+
+/* ================= Popup ================= */
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: rgba(30, 41, 59, 0.55); 
+  backdrop-filter: blur(4px);
+  color: #fff;
+  padding: 0.45rem 0.9rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.18);
+  font-size: 0.9rem;
+  font-weight: 400;
+  z-index: 3000;
+  opacity: 0;
+  transform: translateY(-12px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+.notification i { color: #60a5fa; font-size: 1rem; }
+.notification.show { opacity: 1; transform: translateY(0); }
+
+/* Asegurar cursor pointer en botones de tarjetas */
+.project-links a,
+.project-links a:visited {
+  cursor: pointer;
 }
 
 /* ================= Títulos con líneas ================= */
