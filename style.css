@@ -157,6 +157,9 @@ body {
   #hero {
     flex-direction: column;
     text-align: center;
+    height: auto;         
+    min-height: 120vh;     
+    padding-bottom: 5rem;  
   }
   .hero-left, .hero-right {
     max-width: 100%;
