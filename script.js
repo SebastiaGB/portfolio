@@ -182,8 +182,8 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!href || href === "#" || href.trim() === "" || href.startsWith("javascript:")) {
           a.addEventListener("click", (e) => {
             e.preventDefault();
-            if (isGithub) showNotification("🚫 Este proyecto no tiene repositorio GitHub todavía.");
-            if (isDemo) showNotification("🚫 Este proyecto no tiene demo disponible todavía.");
+            if (isGithub) showNotification(" Este proyecto no tiene repositorio GitHub todavía.");
+            if (isDemo) showNotification(" Este proyecto no tiene demo disponible todavía.");
           });
         }
       });
