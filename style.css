@@ -158,16 +158,65 @@ body {
     flex-direction: column;
     text-align: center;
     height: auto;         
-    min-height: 120vh;     
-    padding-bottom: 5rem;  
+    min-height: auto;    /* evitamos forzar altura innecesaria */
+    padding: 2rem 1rem 4rem;
+    gap: 2rem;
   }
+
   .hero-left, .hero-right {
     max-width: 100%;
     align-items: center;
   }
-  .hero-left h1 { font-size: 2.8rem; }
-  .hero-left p  { font-size: 1.1rem; }
-  .hero-right img { width: 250px; }
+
+  /* Título más compacto */
+  .hero-left h1 { 
+    font-size: 2rem; 
+    line-height: 1.2; 
+  }
+
+  /* Descripción */
+  .hero-left p { 
+    font-size: 1rem; 
+    margin-bottom: 1.2rem; 
+  }
+
+  /* Botones van arriba, antes del perfil */
+  .hero-buttons {
+    order: 2;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Tarjeta de perfil más pequeña */
+  .hero-profile {
+    order: 3;
+    padding: 1rem;
+    max-width: 300px;
+  }
+
+  .hero-profile img {
+    width: 100px;
+    height: 100px;
+  }
+
+  /* Tech stack más pequeño */
+  .tech-stack {
+    order: 4;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+  }
+
+  /* Snippet de código al final */
+  .hero-right {
+    order: 5;
+    width: 100%;
+  }
+
+  .code-editor-card {
+    max-width: 100%;
+    margin-top: 1.5rem;
+  }
 }
 
 /* ================= Main Content ================= */
