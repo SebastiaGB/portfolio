@@ -351,14 +351,27 @@ body {
   #projects-container {
     grid-template-columns: 1fr;
   }
+
   .project-card h3 {
-    font-size: 1.4rem; 
+    font-size: 1.2rem; 
+  }
+
+  .project-card p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    word-break: break-word;     
+    white-space: normal;       
+    overflow-wrap: break-word;  
   }
 }
-/* aún más compacto en móvil */
+
 @media (max-width: 600px) {
   .project-card h3 {
     font-size: 1.2rem; 
+  }
+
+  .project-card p {
+    font-size: 0.85rem; 
   }
 }
 
@@ -758,7 +771,7 @@ footer {
   }
 
   #modal-title {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     margin-bottom: 0.8rem;
     text-align: center;
   }
