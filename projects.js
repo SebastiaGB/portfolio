@@ -15,7 +15,7 @@ const projects = [
   { id: 2,
         title: "Arquitectura ECS",
         description: "Enfocado en orquestación, escalabilidad y arquitectura de microservicios",
-        details: "Despligue escalable de servicios en contenedores usando Amazon ECS, Amazon ALB, en una VPC, con Amazon CloudWatch para la monitorización",
+        details: "Despligue escalable de servicios en contenedores usando Amazon ECS, Amazon ALB, en una VPC, con Amazon CloudWatch.",
         image: "https://SebastiaGB.github.io/portfolio/imagenes/docker_en_aws.jpg",
         technologies: ["Amazon ECS", "Amazon CloudWatch", "Amazon ECR", "Amazon VPC", "ALB", "NAT Gateway"],
         tags: ["Avanzado"],
