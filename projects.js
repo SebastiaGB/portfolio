@@ -26,7 +26,7 @@ const projects = [
         id: 3,
         title: "Kubernetes en AWS",
         description: "CI/CD, despliegue con contenedores y uso de múltiples lenguajes y tecnologías",
-        fullDescription: "Aplicación distribuida en clúster de Kubernetes gestionado con múltiples APIs backend en contenedores, base de datos MongoDB y servicios de AWS.",
+        details: "Aplicación distribuida en clúster de Kubernetes gestionado con múltiples APIs backend en contenedores, base de datos MongoDB y servicios de AWS.",
         image: "https://SebastiaGB.github.io/portfolio/imagenes/Kubernetes_aplicado_AWS.jpg",
         technologies: ["Angular", "Docker", "Amazon ECR", "MongoDB", "Amazon SES", "Minikube"],
         tags: ["Profesional"],
