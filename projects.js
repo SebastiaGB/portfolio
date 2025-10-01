@@ -19,7 +19,7 @@ const projects = [
         image: "https://SebastiaGB.github.io/portfolio/imagenes/Contenedores_AWS.jpg",
         technologies: ["Amazon ECS", "Amazon CloudWatch", "Amazon ECR", "Amazon VPC", "ALB", "NAT Gateway"],
         tags: ["Avanzado"],
-        github: "#",
+        github: "https://github.com/SebastiaGB/Web_con_docker/tree/master",
         demo: "#"
     },
     {
