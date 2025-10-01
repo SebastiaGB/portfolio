@@ -4,12 +4,12 @@ Portfolio con proyectos de **Cloud Computing** y **DevOps**, desarrollados a par
 ## Estructura del proyecto
 ```bash
 portfolio/
-├── 📁 imagenes/         
-├── 📄 index.html        
-├── 📄 style.css         
-├── 📄 script.js         
-├── 📄 projects.js       
-└── 📄 README.md         
+├──  imagenes/         
+├──  index.html        
+├──  style.css         
+├──  script.js         
+├──  projects.js       
+└──  README.md         
 ```
 
 ## Ver el portfolio online
