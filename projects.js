@@ -3,6 +3,16 @@
 // Array de proyectos
 const projects = [
   { id: 1,
+        title: "Organización de cuentas en AWS",
+        description: "Proyecto que sigue las buenas practicas organizativas de cuentas en aws.s",
+        details: "Arquitectura multicuenta en AWS para optimizar la administración, los permisos, la seguridad y la gestión de costes.",
+        image: "https://SebastiaGB.github.io/portfolio/imagenes/Organizacion_cuentas_AWS.jpg",
+        technologies: ["AWS Organizations", "IAM", "IAM Identity Center"],
+        tags: ["Básico"],
+        github: "#",
+        demo: "#"
+    },
+  { id: 2,
         title: "Aplicación Web con Angular desplegada en AWS",
         description: "Despliegue sitio web estatico en el cloud",
         details: "Sitio web estático alojado en un bucket S3, distribuido globalmente con CloudFront y protegido mediante un certificado SSL usando el Certificate Manager.",
@@ -12,7 +22,7 @@ const projects = [
         github: "#",
         demo: "#"
     },
-  { id: 2,
+  { id: 3,
         title: "Arquitectura ECS",
         description: "Enfocado en orquestación, escalabilidad y arquitectura de microservicios",
         details: "Despligue escalable de servicios en contenedores usando Amazon ECS, Amazon ALB, en una VPC, con Amazon CloudWatch.",
@@ -23,7 +33,7 @@ const projects = [
         demo: "#"
     },
     {
-        id: 3,
+        id: 4,
         title: "Kubernetes en AWS",
         description: "CI/CD, despliegue con contenedores y uso de múltiples lenguajes y tecnologías",
         details: "Aplicación distribuida en clúster de Kubernetes gestionado con múltiples APIs backend en contenedores, base de datos MongoDB y servicios de AWS.",
