@@ -9,7 +9,7 @@ const projects = [
         image: "https://SebastiaGB.github.io/portfolio/imagenes/Organizacion_cuentas_AWS.jpg",
         technologies: ["AWS Organizations", "IAM", "IAM Identity Center"],
         tags: ["Básico"],
-        github: "#",
+        github: "https://github.com/SebastiaGB/Organizacion_cuentas_AWS",
         demo: "#"
     },
   { id: 2,
