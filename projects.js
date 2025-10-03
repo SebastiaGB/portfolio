@@ -8,7 +8,7 @@ const projects = [
         details: "Arquitectura multicuenta en AWS para optimizar la administración, los permisos, la seguridad y la gestión de costes.",
         image: "https://SebastiaGB.github.io/portfolio/imagenes/Organizacion_cuentas_AWS.jpg",
         technologies: ["AWS Organizations", "IAM", "IAM Identity Center"],
-        tags: ["Básico"],
+        tags: ["Avanzado"],
         github: "https://github.com/SebastiaGB/Organizacion_cuentas_AWS",
         demo: "#"
     },
