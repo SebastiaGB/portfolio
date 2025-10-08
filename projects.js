@@ -9,7 +9,7 @@ const projects = [
         image: "https://SebastiaGB.github.io/portfolio/imagenes/Organizacion_cuentas_AWS.jpg",
         technologies: ["AWS Organizations", "IAM", "IAM Identity Center"],
         tags: ["Avanzado"],
-        github: "https://github.com/SebastiaGB/Organizacion_cuentas_AWS",
+        github: "https://github.com/SebastiaGB/Organizacion_cuentas_AWS.git",
         demo: "#"
     },
   { id: 2,
@@ -19,7 +19,7 @@ const projects = [
         image: "https://SebastiaGB.github.io/portfolio/imagenes/Web_desplegada_AWS.jpg",
         technologies: ["Route 53", "CloudFront", "Certificate Manager", "S3"],
         tags: ["Básico"],
-        github: "https://github.com/SebastiaGB/Web_con_angular",
+        github: "https://github.com/SebastiaGB/Web_con_angular.git",
         demo: "#"
     },
   { id: 3,
@@ -29,7 +29,7 @@ const projects = [
         image: "https://SebastiaGB.github.io/portfolio/imagenes/Contenedores_AWS.jpg",
         technologies: ["Amazon ECS", "Amazon CloudWatch", "Amazon ECR", "Amazon VPC", "ALB", "NAT Gateway"],
         tags: ["Avanzado"],
-        github: "https://github.com/SebastiaGB/Web_con_docker",
+        github: "https://github.com/SebastiaGB/Web_con_docker.git",
         demo: "#"
     },
     {
