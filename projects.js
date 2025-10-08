@@ -19,7 +19,7 @@ const projects = [
         image: "https://SebastiaGB.github.io/portfolio/imagenes/Web_desplegada_AWS.jpg",
         technologies: ["Route 53", "CloudFront", "Certificate Manager", "S3"],
         tags: ["Básico"],
-        github: "#",
+        github: "https://github.com/SebastiaGB/Web_con_angular",
         demo: "#"
     },
   { id: 3,
