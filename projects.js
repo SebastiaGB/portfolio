@@ -34,13 +34,13 @@ const projects = [
     },
     {
         id: 4,
-        title: "Kubernetes en AWS",
-        description: "CI/CD, despliegue con contenedores y uso de múltiples lenguajes y tecnologías",
-        details: "Aplicación distribuida en clúster de Kubernetes gestionado con múltiples APIs backend en contenedores, base de datos MongoDB y servicios de AWS.",
+        title: "Simple Network Monitoring en AWS",
+        description: "Monitoreo de dominios con microservicios en contenedores y despliegue en Kubernetes (EKS)",
+        details: "Aplicación distribuida para monitoreo de uptime de dominios, con microservicios backend (FastAPI) y worker para pings, frontend en Angular, base de datos DynamoDB y métricas expuestas para Prometheus. Desplegada en un clúster de Kubernetes gestionado (EKS), usando IRSA para acceso seguro a recursos AWS desde los pods y con pipeline CI/CD para construcción y despliegue de imágenes en Amazon ECR.",
         image: "https://SebastiaGB.github.io/portfolio/imagenes/Kubernetes_aplicado_AWS.jpg",
-        technologies: ["Angular", "Docker", "Amazon ECR", "MongoDB", "Amazon SES", "Minikube"],
+        technologies: ["Angular", "Docker", "Kubernetes (EKS)", "Amazon ECR", "DynamoDB", "Prometheus", "Alertmanager", "FastAPI", "Python"],
         tags: ["Profesional"],
-        github: "#",
+        github: "https://github.com/SebastiaGB/Simple-Network-Ping-Monitoring",
         demo: "#"
     }
 ];
