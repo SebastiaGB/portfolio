@@ -36,7 +36,7 @@ const projects = [
         id: 4,
         title: "Simple Network Monitoring en AWS",
         description: "Monitoreo de dominios con microservicios en contenedores y despliegue en Kubernetes (EKS)",
-        details: "Aplicación distribuida para monitoreo de uptime de dominios, con microservicios backend (FastAPI) y worker para pings, frontend en Angular, base de datos DynamoDB y métricas expuestas para Prometheus. Desplegada en un clúster de Kubernetes gestionado (EKS), usando IRSA para acceso seguro a recursos AWS desde los pods y con pipeline CI/CD para construcción y despliegue de imágenes en Amazon ECR.",
+        details: "App distribuida para monitorizar uptime de dominios: backend FastAPI + worker de pings, frontend Angular, DynamoDB, métricas Prometheus. Desplegada en EKS con IRSA y pipeline CI/CD hacia ECR.",
         image: "",
         technologies: ["Angular", "Docker", "Kubernetes (EKS)", "Amazon ECR", "DynamoDB", "Prometheus", "Alertmanager", "FastAPI", "Python"],
         tags: ["Profesional"],
