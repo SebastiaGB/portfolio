@@ -37,7 +37,7 @@ const projects = [
         title: "Simple Network Monitoring en AWS",
         description: "Monitoreo de dominios con microservicios en contenedores y despliegue en Kubernetes (EKS)",
         details: "App distribuida para monitorizar uptime de dominios: backend FastAPI + worker de pings, frontend Angular, DynamoDB, métricas Prometheus. Desplegada en EKS con IRSA y pipeline CI/CD hacia ECR.",
-        image: "",
+        image: "https://SebastiaGB.github.io/portfolio/imagenes/Arquitectura_snpm.jpg",
         technologies: ["Angular", "Docker", "Kubernetes (EKS)", "Amazon ECR", "DynamoDB", "Prometheus", "Alertmanager", "FastAPI", "Python"],
         tags: ["Profesional"],
         github: "https://github.com/SebastiaGB/Simple-Network-Ping-Monitring.git",
