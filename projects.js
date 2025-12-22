@@ -32,8 +32,7 @@ const projects = [
         github: "https://github.com/SebastiaGB/Web_con_docker.git",
         demo: "#"
     },
-    {
-        id: 4,
+    { id: 4,
         title: "Simple Network Monitoring en AWS",
         description: "Monitoreo de dominios con microservicios en contenedores y despliegue en Kubernetes (EKS)",
         details: "App distribuida para monitorizar uptime de dominios: backend FastAPI + worker de pings, frontend Angular, DynamoDB, métricas Prometheus. Desplegada en EKS con IRSA y pipeline CI/CD hacia ECR.",
@@ -42,7 +41,17 @@ const projects = [
         tags: ["Profesional"],
         github: "https://github.com/SebastiaGB/Simple-Network-Ping-Monitring.git",
         demo: "#"
-    }
+    },
+    { "id": 5,
+        "title": "IoT Sensor Gateway & Monitoring Platform",
+        "description": "Simulación de sensores IoT, procesamiento en tiempo real y monitorización con Grafana en AWS",
+        "details": "Plataforma distribuida para simular sensores de temperatura, humedad y consumo eléctrico. Incluye IoT Gateway en ECS Fargate, API Gateway + Lambdas para procesar datos y almacenarlos en RDS PostgreSQL, y Grafana para visualización y alertas. Infraestructura desplegada completamente con CloudFormation, usando VPC privadas, ECS, ECR, ALB, Secrets Manager e IAM con permisos mínimos.",
+        "image": "https://SebastiaGB.github.io/portfolio/imagenes/Iot_simulation.jpg",
+        "technologies": ["AWS CloudFormation", "ECS Fargate", "ECR", "API Gateway", "Lambda", "PostgreSQL", "Grafana", "Python", "Docker", "Prometheus", "SNS"],
+        "tags": ["Profesional"],
+        "github": "https://github.com/SebastiaGB/Iot-Observability-Platform.git",
+        "demo": "#"
+      }
 ];
 
 // Exportar para uso en script.js (solo si es Node.js)
