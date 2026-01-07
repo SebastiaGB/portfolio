@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
     modalTitle.textContent = project.title;
     modalImage.src = project.image;
     modalImage.alt = project.title;
-    modalDetails.innerHTML = `<p>${project.details || ""}</p>`;
+    modalDetails.textContent = project.details || "";
 
     modalTech.innerHTML = project.technologies?.length
       ? project.technologies.map((tech) => `<span class="tech-chip">${tech}</span>`).join("")
