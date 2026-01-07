@@ -954,3 +954,42 @@ footer {
   -webkit-text-fill-color: transparent;
   letter-spacing: 1px;
 }
+
+/* ================= Modal scroll ================= */
+
+/* Quitamos el overflow hidden general */
+.modal-content {
+  overflow: hidden;
+}
+
+/* El body del modal puede crecer */
+.modal-body {
+  flex: 1;
+  overflow: hidden;
+}
+
+/* Scroll SOLO en la info */
+.modal-details-wrapper {
+  overflow-y: auto;
+  padding-right: 0.5rem;
+  max-height: 100%;
+}
+
+/* Scrollbar discreta (opcional, queda muy fino) */
+.modal-details-wrapper::-webkit-scrollbar {
+  width: 6px;
+}
+
+.modal-details-wrapper::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.modal-details-wrapper::-webkit-scrollbar-thumb {
+  background: rgba(96, 165, 250, 0.6);
+  border-radius: 10px;
+}
+
+.modal-details-wrapper::-webkit-scrollbar-thumb:hover {
+  background: rgba(96, 165, 250, 0.9);
+}
+
