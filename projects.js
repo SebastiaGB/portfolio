@@ -4,7 +4,7 @@
 const projects = [
   { id: 1,
         title: "Organización de cuentas en AWS",
-        description: "Proyecto que sigue las buenas practicas organizativas de cuentas en aws.s",
+        description: "Proyecto que sigue las buenas practicas organizativas de cuentas en aws",
         details: "Arquitectura multicuenta en AWS para optimizar la administración, los permisos, la seguridad y la gestión de costes.",
         image: "https://SebastiaGB.github.io/portfolio/imagenes/Organizacion_cuentas_AWS.jpg",
         technologies: ["AWS Organizations", "IAM", "IAM Identity Center"],
@@ -35,9 +35,9 @@ const projects = [
     { id: 4,
         title: "Simple Network Monitoring en AWS",
         description: "Monitoreo de dominios con microservicios en contenedores y despliegue en Kubernetes (EKS)",
-        details: "App distribuida para monitorizar uptime de dominios: backend FastAPI + worker de pings, frontend Angular, DynamoDB, métricas Prometheus. Desplegada en EKS con IRSA y pipeline CI/CD hacia ECR.",
+        details: "Sistema distribuido de monitorización de uptime con backend FastAPI y worker de pings, frontend Angular y persistencia en DynamoDB. Exposición de métricas con Prometheus y dashboards en Grafana. Arquitectura híbrida: stack de observabilidad local (Docker Compose) y servicios desplegados en AWS EKS con IRSA y pipeline CI/CD hacia Amazon ECR.",
         image: "https://SebastiaGB.github.io/portfolio/imagenes/Arquitectura_snpm.jpg",
-        technologies: ["Angular", "Docker", "Kubernetes (EKS)", "Amazon ECR", "DynamoDB", "Prometheus", "Alertmanager", "FastAPI", "Python"],
+        technologies: ["CloudFormation", "Docker", "Kubernetes", "EKS", "ECR", "DynamoDB", "Prometheus", "Alertmanager", "FastAPI", "Python"],
         tags: ["Profesional"],
         github: "https://github.com/SebastiaGB/Simple-Network-Ping-Monitring.git",
         demo: "#"
@@ -47,7 +47,7 @@ const projects = [
         "description": "Simulación de sensores IoT, procesamiento en tiempo real y monitorización con Grafana en AWS",
         "details": "Plataforma distribuida para simular sensores de temperatura, humedad y consumo eléctrico. Incluye IoT Gateway en ECS Fargate, API Gateway + Lambdas para procesar datos y almacenarlos en RDS PostgreSQL, y Grafana para visualización y alertas. Infraestructura desplegada completamente con CloudFormation, usando VPC privadas, ECS, ECR, ALB, Secrets Manager e IAM con permisos mínimos.",
         "image": "https://SebastiaGB.github.io/portfolio/imagenes/Iot_simulation.jpg",
-        "technologies": ["AWS CloudFormation", "ECS Fargate", "ECR", "API Gateway", "Lambda", "PostgreSQL", "Grafana", "Python", "Docker", "Prometheus", "SNS"],
+        "technologies": ["CloudFormation", "Docker", "ECS", "ECR", "API Gateway", "Lambda", "PostgreSQL", "Grafana", "Python", "Prometheus", "SNS"],
         "tags": ["Profesional"],
         "github": "https://github.com/SebastiaGB/Iot-Observability-Platform.git",
         "demo": "#"
