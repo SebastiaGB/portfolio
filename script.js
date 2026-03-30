@@ -194,14 +194,21 @@ document.addEventListener("DOMContentLoaded", () => {
   const savedFilter = localStorage.getItem("selectedTab") || "Todos";
 
   function applyFilter(filter) {
-    if (filter === "Todos") {
-      renderProjects(projects);
-    } else {
-      const filtered = projects.filter((p) => p.tags && p.tags.includes(filter));
-      renderProjects(filtered);
-    }
-    localStorage.setItem("selectedTab", filter);
+  if (filter === "Todos") {
+    renderProjects(projects);
+  } else {
+    const filtered = projects.filter((p) => {
+      return (
+        (p.tags && p.tags.includes(filter)) || 
+        (p.plataforma && p.plataforma === filter)
+      );
+    });
+
+    renderProjects(filtered);
   }
+
+  localStorage.setItem("selectedTab", filter);
+}
 
   tabs.forEach((tab) => {
     tab.addEventListener("click", () => {

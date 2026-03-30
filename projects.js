@@ -9,6 +9,7 @@ const projects = [
         image: "https://SebastiaGB.github.io/portfolio/imagenes/Organizacion_cuentas_AWS.jpg",
         technologies: ["AWS Organizations", "IAM", "IAM Identity Center"],
         tags: ["Avanzado"],
+        plataforma: "AWS",
         github: "https://github.com/SebastiaGB/Organizacion_cuentas_AWS.git",
         demo: "#"
     },
@@ -19,6 +20,7 @@ const projects = [
         image: "https://SebastiaGB.github.io/portfolio/imagenes/Web_desplegada_AWS.jpg",
         technologies: ["Route 53", "CloudFront", "Certificate Manager", "S3"],
         tags: ["Básico"],
+        plataforma: "AWS",
         github: "https://github.com/SebastiaGB/Web_con_angular.git",
         demo: "#"
     },
@@ -29,6 +31,7 @@ const projects = [
         image: "https://SebastiaGB.github.io/portfolio/imagenes/Contenedores_AWS.jpg",
         technologies: ["Amazon ECS", "Amazon CloudWatch", "Amazon ECR", "Amazon VPC", "ALB", "NAT Gateway"],
         tags: ["Avanzado"],
+        plataforma: "AWS",
         github: "https://github.com/SebastiaGB/Web_con_docker.git",
         demo: "#"
     },
@@ -39,18 +42,20 @@ const projects = [
         image: "https://SebastiaGB.github.io/portfolio/imagenes/Arquitectura_snpm.jpg",
         technologies: ["CloudFormation", "Docker", "Kubernetes", "EKS", "ECR", "DynamoDB", "Prometheus", "Alertmanager", "FastAPI", "Python"],
         tags: ["Profesional"],
+        plataforma: "AWS",
         github: "https://github.com/SebastiaGB/Simple-Network-Ping-Monitring.git",
         demo: "#"
     },
-    { "id": 5,
-        "title": "IoT Sensor Gateway & Monitoring Platform",
-        "description": "Simulación de sensores IoT, procesamiento en tiempo real y monitorización con Grafana en AWS",
-        "details": "Plataforma distribuida para simular sensores de temperatura, humedad y consumo eléctrico. Incluye IoT Gateway en ECS Fargate, API Gateway + Lambdas para procesar datos y almacenarlos en RDS PostgreSQL, y Grafana para visualización y alertas. Infraestructura desplegada completamente con CloudFormation, usando VPC privadas, ECS, ECR, ALB, Secrets Manager e IAM con permisos mínimos.",
-        "image": "https://SebastiaGB.github.io/portfolio/imagenes/Iot_simulation.jpg",
-        "technologies": ["CloudFormation", "Docker", "ECS", "ECR", "API Gateway", "Lambda", "PostgreSQL", "Grafana", "Python", "Prometheus", "SNS"],
-        "tags": ["Profesional"],
-        "github": "https://github.com/SebastiaGB/Iot-Observability-Platform.git",
-        "demo": "#"
+    { id: 5,
+        title: "IoT Sensor Gateway & Monitoring Platform",
+        description: "Simulación de sensores IoT, procesamiento en tiempo real y monitorización con Grafana en AWS",
+        details: "Plataforma distribuida para simular sensores de temperatura, humedad y consumo eléctrico. Incluye IoT Gateway en ECS Fargate, API Gateway + Lambdas para procesar datos y almacenarlos en RDS PostgreSQL, y Grafana para visualización y alertas. Infraestructura desplegada completamente con CloudFormation, usando VPC privadas, ECS, ECR, ALB, Secrets Manager e IAM con permisos mínimos.",
+        image: "https://SebastiaGB.github.io/portfolio/imagenes/Iot_simulation.jpg",
+        technologies: ["CloudFormation", "Docker", "ECS", "ECR", "API Gateway", "Lambda", "PostgreSQL", "Grafana", "Python", "Prometheus", "SNS"],
+        tags: ["Profesional"],
+        plataforma: "AWS",
+        github: "https://github.com/SebastiaGB/Iot-Observability-Platform.git",
+        demo: "#"
       }
 ];
 
