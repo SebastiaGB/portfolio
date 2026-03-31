@@ -86,7 +86,10 @@ document.addEventListener("DOMContentLoaded", () => {
   modalClose.addEventListener("click", closeModal);
 
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeModal();
+    if (e.key === "Escape") {
+      closeModal();
+      lightbox.style.display = "none";
+    }
 
     if (e.key === "Tab" && modal.style.display === "flex") {
       const focusable = modal.querySelectorAll("a, button, [tabindex]:not([tabindex='-1'])");
@@ -227,4 +230,27 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
   applyFilter(savedFilter);
+
+  // ===== Lightbox =====
+const lightbox = document.createElement("div");
+lightbox.id = "lightbox";
+
+lightbox.innerHTML = `
+  <img class="lightbox-img" src="" alt="Imagen ampliada">
+`;
+
+document.body.appendChild(lightbox);
+
+const lightboxImg = lightbox.querySelector(".lightbox-img");
+
+modalImage.addEventListener("click", () => {
+  lightboxImg.src = modalImage.src;
+  lightbox.style.display = "flex";
+});
+
+lightbox.addEventListener("click", () => {
+  lightbox.style.display = "none";
+});
+
+
 });
