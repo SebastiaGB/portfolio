@@ -54,6 +54,8 @@ document.addEventListener("DOMContentLoaded", () => {
   function openModal(projectId) {
     const project = projects.find((p) => p.id === projectId);
     if (!project) return;
+    const hasDemoUrl = Boolean(project.demo && project.demo !== "#");
+    const showDemoButton = hasDemoUrl || project.tags?.includes("Proyectos Profesionales");
 
     lastFocusedElement = document.activeElement;
 
@@ -72,8 +74,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // Botones
     modalGithub.style.display = "inline-block";
     modalGithub.href = project.github || "#";
-    modalDemo.style.display = project.demo && project.demo !== "#" ? "inline-block" : "none";
-    if (project.demo && project.demo !== "#") modalDemo.href = project.demo;
+    modalDemo.style.display = showDemoButton ? "inline-block" : "none";
+    modalDemo.href = hasDemoUrl ? project.demo : "#";
 
     // Eventos de botones del modal
     modalGithub.onclick = (e) => {
@@ -83,9 +85,9 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     };
     modalDemo.onclick = (e) => {
-      if (!project.demo || project.demo === "#") {
+      if (!hasDemoUrl) {
         e.preventDefault();
-        showNotification(" Este proyecto no tiene demo disponible todavía.");
+        showNotification("Este proyecto no tiene demo disponible todavía.");
       }
     };
 
@@ -184,6 +186,8 @@ document.addEventListener("DOMContentLoaded", () => {
     filteredProjects.forEach((proj, index) => {
       const card = document.createElement("article");
       card.classList.add("project-card");
+      const hasDemoUrl = Boolean(proj.demo && proj.demo !== "#");
+      const showDemoButton = hasDemoUrl || proj.tags?.includes("Proyectos Profesionales");
 
       card.innerHTML = `
         <button class="project-card-open" type="button" aria-label="Ver detalles de ${proj.title}">
@@ -195,7 +199,11 @@ document.addEventListener("DOMContentLoaded", () => {
         </button>
         <div class="project-links">
             ${proj.github ? `<a href="${proj.github}" target="_blank" rel="noopener noreferrer" class="btn-link github"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>` : ""}
-            ${proj.demo && proj.demo !== "#" ? `<a href="${proj.demo}" target="_blank" rel="noopener noreferrer" class="btn-link demo"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Demo</a>` : ""}
+            ${hasDemoUrl
+              ? `<a href="${proj.demo}" target="_blank" rel="noopener noreferrer" class="btn-link demo"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Demo</a>`
+              : showDemoButton
+                ? `<button type="button" class="btn-link demo unavailable-demo"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Demo</button>`
+                : ""}
         </div>
       `;
 
@@ -218,6 +226,10 @@ document.addEventListener("DOMContentLoaded", () => {
             if (isGithub) showNotification("Este proyecto no tiene repositorio GitHub todavía.");
           });
         }
+      });
+
+      card.querySelector(".unavailable-demo")?.addEventListener("click", () => {
+        showNotification("Este proyecto no tiene demo disponible todavía.");
       });
     });
   }
