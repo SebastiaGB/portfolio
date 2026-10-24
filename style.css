@@ -655,6 +655,9 @@ footer {
 
 /* Contenido */
 .code-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
   padding: 1.05rem 1.15rem;
   font-size: 0.78rem;
   line-height: 1.55;
