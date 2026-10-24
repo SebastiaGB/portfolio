@@ -736,7 +736,7 @@ footer {
 #modal-title {
   text-align: center;
   margin: 0 2.5rem 1.5rem;
-  color: #0f172a;
+  color: #1d4ed8;
   font-size: clamp(1.35rem, 2vw, 1.8rem);
   line-height: 1.25;
 }
