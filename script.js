@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ===== Modal elements =====
   const modal = document.getElementById("project-modal");
+  const modalDialog = modal.querySelector(".modal-content");
   const modalTitle = document.getElementById("modal-title");
   const modalImage = document.getElementById("modal-image");
   const modalDetails = document.getElementById("modal-details");
@@ -17,9 +18,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const lightbox = document.createElement("div");
   lightbox.id = "lightbox";
   lightbox.setAttribute("aria-hidden", "true");
-  lightbox.innerHTML = '<img class="lightbox-img" src="" alt="">';
+  lightbox.innerHTML = `
+    <section class="lightbox-dialog" role="dialog" aria-modal="true" aria-label="Imagen ampliada">
+      <button class="lightbox-close" type="button" aria-label="Cerrar imagen ampliada">&times;</button>
+      <img class="lightbox-img" src="" alt="">
+    </section>`;
   document.body.appendChild(lightbox);
   const lightboxImg = lightbox.querySelector(".lightbox-img");
+  const lightboxClose = lightbox.querySelector(".lightbox-close");
 
   let lastFocusedElement = null; // para focus trap
 
@@ -57,10 +63,10 @@ document.addEventListener("DOMContentLoaded", () => {
     modalDetails.textContent = project.details || "";
 
     modalTech.replaceChildren(...(project.technologies || []).map((tech) => {
-      const chip = document.createElement("span");
-      chip.className = "tech-chip";
-      chip.textContent = tech;
-      return chip;
+      const item = document.createElement("li");
+      item.className = "tech-chip";
+      item.textContent = tech;
+      return item;
     }));
 
     // Botones
@@ -84,8 +90,8 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     modal.setAttribute("aria-hidden", "false");
-    modalClose.focus();
     modal.style.display = "flex";
+    modalDialog.focus({ preventScroll: true });
   }
 
   function closeModal() {
@@ -98,6 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
   modal.addEventListener("click", (event) => {
     if (event.target === modal) closeModal();
   });
+  lightboxClose.addEventListener("click", closeLightbox);
 
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
@@ -105,16 +112,26 @@ document.addEventListener("DOMContentLoaded", () => {
       else if (modal.style.display === "flex") closeModal();
     }
 
+    if (e.key === "Tab" && lightbox.style.display === "flex") {
+      e.preventDefault();
+      lightboxClose.focus();
+      return;
+    }
+
     if (e.key === "Tab" && modal.style.display === "flex") {
-      const focusable = [...modal.querySelectorAll("a[href], button:not([disabled])")]
+      const focusable = [...modal.querySelectorAll("a[href], button:not([disabled]), [role='button'][tabindex]")]
         .filter((element) => element.offsetParent !== null);
+      if (!focusable.length) {
+        e.preventDefault();
+        modal.focus();
+        return;
+      }
       const first = focusable[0];
       const last = focusable[focusable.length - 1];
-
-      if (e.shiftKey && document.activeElement === first) {
+      if (e.shiftKey && (document.activeElement === first || !modal.contains(document.activeElement))) {
         e.preventDefault();
         last.focus();
-      } else if (!e.shiftKey && document.activeElement === last) {
+      } else if (!e.shiftKey && (document.activeElement === last || !modal.contains(document.activeElement))) {
         e.preventDefault();
         first.focus();
       }
@@ -167,25 +184,25 @@ document.addEventListener("DOMContentLoaded", () => {
     filteredProjects.forEach((proj, index) => {
       const card = document.createElement("article");
       card.classList.add("project-card");
-      card.style.cursor = "pointer";
 
       card.innerHTML = `
-        <img src="${proj.image}" alt="${proj.title}" loading="lazy">
-        <div class="project-card-content">
-          <h3>${proj.title}</h3>
-          ${proj.description ? `<p>${proj.description}</p>` : ""}
-          <div class="project-links">
+        <button class="project-card-open" type="button" aria-label="Ver detalles de ${proj.title}">
+          <img src="${proj.image}" alt="" loading="lazy">
+          <span class="project-card-content">
+            <span class="project-card-title">${proj.title}</span>
+            ${proj.description ? `<span class="project-card-description">${proj.description}</span>` : ""}
+          </span>
+        </button>
+        <div class="project-links">
             ${proj.github ? `<a href="${proj.github}" target="_blank" rel="noopener noreferrer" class="btn-link github"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>` : ""}
             ${proj.demo && proj.demo !== "#" ? `<a href="${proj.demo}" target="_blank" rel="noopener noreferrer" class="btn-link demo"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Demo</a>` : ""}
-          </div>
         </div>
       `;
 
       setTimeout(() => card.classList.add("show"), index * 150);
 
-      // Click en la tarjeta abre modal
-      card.addEventListener("click", () => openModal(proj.id));
       container.appendChild(card);
+      card.querySelector(".project-card-open").addEventListener("click", () => openModal(proj.id));
 
       // --- Enlaces dentro de la tarjeta ---
       const cardLinks = card.querySelectorAll(".project-links a");
@@ -240,17 +257,20 @@ document.addEventListener("DOMContentLoaded", () => {
     tab.addEventListener("click", () => {
       tabs.forEach((t) => t.classList.remove("active"));
       tab.classList.add("active");
+        tabs.forEach((item) => item.setAttribute("aria-pressed", String(item === tab)));
       const filter = tab.getAttribute("data-filter");
       applyFilter(filter);
     });
   });
 
   tabs.forEach((tab) => {
-    if (tab.getAttribute("data-filter") === savedFilter) {
+    const isActive = tab.getAttribute("data-filter") === savedFilter;
+    if (isActive) {
       tab.classList.add("active");
     } else {
       tab.classList.remove("active");
     }
+    tab.setAttribute("aria-pressed", String(isActive));
   });
   applyFilter(savedFilter);
 
@@ -269,6 +289,7 @@ document.addEventListener("DOMContentLoaded", () => {
     lightboxImg.alt = `Imagen ampliada: ${modalImage.alt}`;
     lightbox.setAttribute("aria-hidden", "false");
     lightbox.style.display = "flex";
+    lightboxClose.focus();
   });
   modalImage.addEventListener("keydown", (event) => {
     if (event.key === "Enter" || event.key === " ") {
@@ -276,7 +297,9 @@ document.addEventListener("DOMContentLoaded", () => {
       modalImage.click();
     }
   });
-  lightbox.addEventListener("click", closeLightbox);
+  lightbox.addEventListener("click", (event) => {
+    if (event.target === lightbox) closeLightbox();
+  });
 
 
 });

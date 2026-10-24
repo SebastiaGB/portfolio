@@ -161,23 +161,23 @@
       </p>
 
       <div id="tabs">
-        <button class="tab active" data-filter="Todos">
+        <button class="tab active" data-filter="Todos" aria-pressed="true">
           <i class="fas fa-th"></i> Todos
         </button>
 
-        <button class="tab" data-filter="AWS">
+        <button class="tab" data-filter="AWS" aria-pressed="false">
           <i class="fab fa-aws"></i> AWS
         </button>
 
-        <button class="tab" data-filter="Azure">
+        <button class="tab" data-filter="Azure" aria-pressed="false">
           <i class="fab fa-microsoft"></i> Azure
         </button>
 
-        <button class="tab" data-filter="Formación">
+        <button class="tab" data-filter="Formación" aria-pressed="false">
           <i class="fas fa-graduation-cap"></i> Formación
         </button>
 
-        <button class="tab" data-filter="Proyectos Profesionales">
+        <button class="tab" data-filter="Proyectos Profesionales" aria-pressed="false">
           <i class="fas fa-briefcase"></i> Proyectos Profesionales
         </button>
       </div>
@@ -235,7 +235,7 @@
 
   <!-- Modal -->
   <div id="project-modal" aria-hidden="true">
-    <div class="modal-content">
+    <section class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-details" tabindex="-1">
       <button class="modal-close" type="button" aria-label="Cerrar detalles del proyecto">&times;</button>
       <h2 id="modal-title" tabindex="-1"></h2>
       <div class="modal-body">
@@ -254,7 +254,8 @@
 
           <!-- Tecnologías + botones abajo -->
           <div class="modal-actions">
-            <div id="modal-tech" class="modal-tech"></div>
+            <h3 class="modal-tech-heading">Tecnologías utilizadas</h3>
+            <ul id="modal-tech" class="modal-tech" aria-label="Tecnologías utilizadas"></ul>
             <div class="modal-buttons">
               <a id="modal-github" href="#" target="_blank" rel="noopener noreferrer">
                 <i class="fab fa-github"></i> GitHub
@@ -267,7 +268,7 @@
         </div>
 
       </div>
-    </div>
+    </section>
   </div>
 
   <!-- Scripts -->
