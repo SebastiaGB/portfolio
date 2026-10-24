@@ -3,16 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio de Sebastià Gamundí, Cloud Engineer especializado en AWS, Terraform, automatización e infraestructura como código.">
+  <meta name="theme-color" content="#0f172a">
 
   <title>Sebastià Gamundí | Cloud Engineer</title>
 
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <!-- Fuente monospace para snippet -->
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -169,16 +173,12 @@
           <i class="fab fa-microsoft"></i> Azure
         </button>
 
-        <button class="tab" data-filter="Básico">
-          <i class="fas fa-seedling"></i> Básico
+        <button class="tab" data-filter="Formación">
+          <i class="fas fa-graduation-cap"></i> Formación
         </button>
 
-        <button class="tab" data-filter="Avanzado">
-          <i class="fas fa-rocket"></i> Avanzado
-        </button>
-
-        <button class="tab" data-filter="Profesional">
-          <i class="fas fa-briefcase"></i> Profesional
+        <button class="tab" data-filter="Proyectos Profesionales">
+          <i class="fas fa-briefcase"></i> Proyectos Profesionales
         </button>
       </div>
 
@@ -193,13 +193,13 @@
       </p>
 
       <div class="contact-links">
-        <a href="https://www.linkedin.com/in/sebastia-gamundi" class="contact-box" target="_blank">
+        <a href="https://www.linkedin.com/in/sebastia-gamundi" class="contact-box" target="_blank" rel="noopener noreferrer">
           <div class="icon-circle"><i class="fab fa-linkedin"></i></div>
           <span>LinkedIn</span>
           <small>linkedin.com/in/sebastia-gamundi</small>
         </a>
 
-        <a href="mailto:gamun747@gmail.com" class="contact-box" target="_blank">
+        <a href="mailto:gamun747@gmail.com" class="contact-box">
           <div class="icon-circle"><i class="fas fa-envelope"></i></div>
           <span>Email</span>
           <small>gamun747@gmail.com</small>
@@ -212,10 +212,10 @@
   <!-- ================= Footer ================= -->
   <footer>
     <div class="footer-links">
-      <a href="https://www.linkedin.com/in/sebastia-gamundi" target="_blank">
+      <a href="https://www.linkedin.com/in/sebastia-gamundi" target="_blank" rel="noopener noreferrer">
         <i class="fab fa-linkedin"></i> LinkedIn
       </a>
-      <a href="https://github.com/SebastiaGB" target="_blank">
+      <a href="https://github.com/SebastiaGB" target="_blank" rel="noopener noreferrer">
         <i class="fab fa-github"></i> GitHub
       </a>
       <a href="mailto:gamun747@gmail.com" target="_blank" rel="noopener noreferrer">
@@ -234,10 +234,10 @@
   </button>
 
   <!-- Modal -->
-  <div id="project-modal">
+  <div id="project-modal" aria-hidden="true">
     <div class="modal-content">
-      <span class="modal-close">&times;</span>
-      <h2 id="modal-title"></h2>
+      <button class="modal-close" type="button" aria-label="Cerrar detalles del proyecto">&times;</button>
+      <h2 id="modal-title" tabindex="-1"></h2>
       <div class="modal-body">
         
         <!-- Columna izquierda -->
@@ -256,10 +256,10 @@
           <div class="modal-actions">
             <div id="modal-tech" class="modal-tech"></div>
             <div class="modal-buttons">
-              <a id="modal-github" href="#" target="_blank">
+              <a id="modal-github" href="#" target="_blank" rel="noopener noreferrer">
                 <i class="fab fa-github"></i> GitHub
               </a>
-              <a id="modal-demo" href="#" target="_blank">
+              <a id="modal-demo" href="#" target="_blank" rel="noopener noreferrer">
                 <i class="fas fa-external-link-alt"></i> Demo
               </a>
             </div>

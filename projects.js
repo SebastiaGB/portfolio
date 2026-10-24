@@ -8,10 +8,10 @@ const projects = [
         details: "Arquitectura multicuenta en AWS para optimizar la administración, los permisos, la seguridad y la gestión de costes.",
         image: "https://SebastiaGB.github.io/portfolio/imagenes/Organizacion_cuentas_AWS.jpg",
         technologies: ["AWS Organizations", "IAM", "IAM Identity Center"],
-        tags: ["Avanzado"],
+        tags: ["Formación"],
         plataforma: "AWS",
         github: "https://github.com/SebastiaGB/Organizacion_cuentas_AWS.git",
-        demo: "#"
+        demo: null
     },
   { id: 2,
         title: "Aplicación Web con Angular desplegada en AWS",
@@ -19,10 +19,10 @@ const projects = [
         details: "Sitio web estático alojado en un bucket S3, distribuido globalmente con CloudFront y protegido mediante un certificado SSL usando el Certificate Manager.",
         image: "https://SebastiaGB.github.io/portfolio/imagenes/Web_desplegada_AWS.jpg",
         technologies: ["Route 53", "CloudFront", "Certificate Manager", "S3"],
-        tags: ["Básico"],
+        tags: ["Formación"],
         plataforma: "AWS",
         github: "https://github.com/SebastiaGB/Web_con_angular.git",
-        demo: "#"
+        demo: null
     },
   { id: 3,
         title: "Arquitectura ECS",
@@ -30,10 +30,10 @@ const projects = [
         details: "Despligue escalable de servicios en contenedores usando Amazon ECS, Amazon ALB, en una VPC, con Amazon CloudWatch.",
         image: "https://SebastiaGB.github.io/portfolio/imagenes/Contenedores_AWS.jpg",
         technologies: ["Amazon ECS", "Amazon CloudWatch", "Amazon ECR", "Amazon VPC", "ALB", "NAT Gateway"],
-        tags: ["Avanzado"],
+        tags: ["Formación"],
         plataforma: "AWS",
         github: "https://github.com/SebastiaGB/Web_con_docker.git",
-        demo: "#"
+        demo: null
     },
     { id: 4,
         title: "Simple Network Monitoring en AWS",
@@ -41,10 +41,10 @@ const projects = [
         details: "Sistema distribuido de monitorización de uptime con backend FastAPI y worker de pings, frontend Angular y persistencia en DynamoDB. Exposición de métricas con Prometheus y dashboards en Grafana. Arquitectura híbrida: stack de observabilidad local (Docker Compose) y servicios desplegados en AWS EKS con IRSA y pipeline CI/CD hacia Amazon ECR.",
         image: "https://SebastiaGB.github.io/portfolio/imagenes/Arquitectura_snpm.jpg",
         technologies: ["CloudFormation", "Docker", "Kubernetes", "EKS", "ECR", "DynamoDB", "Prometheus", "Alertmanager", "FastAPI", "Python"],
-        tags: ["Profesional"],
+        tags: ["Proyectos Profesionales"],
         plataforma: "AWS",
         github: "https://github.com/SebastiaGB/Simple-Network-Ping-Monitring.git",
-        demo: "#"
+        demo: null
     },
     { id: 5,
         title: "IoT Sensor Gateway & Monitoring Platform",
@@ -52,10 +52,10 @@ const projects = [
         details: "Plataforma distribuida para simular sensores de temperatura, humedad y consumo eléctrico. Incluye IoT Gateway en ECS Fargate, API Gateway + Lambdas para procesar datos y almacenarlos en RDS PostgreSQL, y Grafana para visualización y alertas. Infraestructura desplegada completamente con CloudFormation, usando VPC privadas, ECS, ECR, ALB, Secrets Manager e IAM con permisos mínimos.",
         image: "https://SebastiaGB.github.io/portfolio/imagenes/Iot_simulation.jpg",
         technologies: ["CloudFormation", "Docker", "ECS", "ECR", "API Gateway", "Lambda", "PostgreSQL", "Grafana", "Python", "Prometheus", "SNS"],
-        tags: ["Profesional"],
+        tags: ["Proyectos Profesionales"],
         plataforma: "AWS",
         github: "https://github.com/SebastiaGB/Iot-Observability-Platform.git",
-        demo: "#"
+        demo: null
       }
 ];
 

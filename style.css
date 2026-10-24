@@ -12,6 +12,8 @@ html {
 body {
   font-family: 'Poppins', sans-serif;
   line-height: 1.6;
+  background: #f1f5f9;
+  color: #0f172a;
 }
 
 /* ================= Hero ================= */
@@ -20,7 +22,7 @@ body {
   align-items: center;
   justify-content: space-between;
   min-height: 100vh;
-  height: 100vh;
+  min-height: 100svh;
   padding: 3rem;
   background: linear-gradient(to bottom, #1e293b, #0f172a);
   color: #f1f5f9;
@@ -222,7 +224,7 @@ body {
 /* ================= Main Content ================= */
 #main-content {
   width: 100%;
-  background: linear-gradient(to bottom, #dbeafe, #bfdbfe);
+  background: linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%);
   padding: 4rem 2rem;
   display: flex;
   flex-direction: column;
@@ -283,7 +285,7 @@ body {
   display: grid;
   gap: 2.5rem;
   margin-top: 1rem;
-  grid-template-columns: repeat(2, minmax(680px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr));
   justify-content: center;
   align-items: stretch;
 }
@@ -292,13 +294,14 @@ body {
 .project-card {
   display: flex;
   flex-direction: column;
-  background: linear-gradient(145deg, #1e293b, #273449);
+  background: #fff;
+  border: 1px solid #e2e8f0;
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.09);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   height: 100%;
-  min-height: 420px;
+  min-height: 360px;
   opacity: 0;
   transform: translateY(20px);
 }
@@ -311,7 +314,7 @@ body {
 
 .project-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 12px 25px rgba(0,0,0,0.6);
+  box-shadow: 0 16px 32px rgba(15, 23, 42, 0.15);
 }
 
 .project-card img {
@@ -339,7 +342,7 @@ body {
 .project-card p {
   flex-grow: 1.1;
   font-size: 1rem;
-  color: #cbd5e1;
+  color: #475569;
   margin-bottom: 1rem;
 }
 
@@ -586,14 +589,17 @@ footer {
 
 /* ================= Code Editor Card ================= */
 .code-editor-card {
-  background: #1e1e2e;
-  border-radius: 12px;
+  background: #fff;
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  box-shadow: 0 20px 48px rgba(2, 6, 23, 0.3);
   width: 100%;
-  max-width: 450px;
+  max-width: 420px;
+  min-height: 320px;
   font-family: 'Fira Code', monospace;
-  margin-top: 2rem;
+  margin: 0.75rem 0 0;
+  color: #334155;
 }
 
 /* Header estilo VSCode */
@@ -601,15 +607,16 @@ footer {
   display: flex;
   align-items: center;
   gap: 0.4rem;
-  padding: 0.5rem 1rem;
-  background: #2d2d3a;
-  font-size: 0.85rem;
-  color: #94a3b8;
+  padding: 0.65rem 0.9rem;
+  background: #f1f5f9;
+  border-bottom: 1px solid #e2e8f0;
+  font-size: 0.75rem;
+  color: #64748b;
 }
 
 .code-header .dot {
-  width: 12px;
-  height: 12px;
+  width: 9px;
+  height: 9px;
   border-radius: 50%;
 }
 
@@ -624,18 +631,23 @@ footer {
 
 /* Contenido */
 .code-content {
-  padding: 1rem;
-  font-size: 0.9rem;
-  line-height: 1.5;
-  white-space: pre-line;
+  padding: 1.05rem 1.15rem;
+  font-size: 0.78rem;
+  line-height: 1.55;
+  white-space: normal;
+  overflow-x: auto;
+}
+
+.code-line {
+  line-height: 1.55;
 }
 
 /* Coloreado estilo VSCode */
-.keyword     { color: #c792ea; }
-.class-name  { color: #82aaff; }
-.this        { color: #ffcb6b; }
-.property    { color: #f78c6c; }
-.string      { color: #c3e88d; }
+.keyword     { color: #7c3aed; }
+.class-name  { color: #2563eb; }
+.this        { color: #b45309; }
+.property    { color: #c2410c; }
+.string      { color: #15803d; }
 
 /* Tech stack */
 .tech-stack {
@@ -805,6 +817,26 @@ footer {
   font-weight: 600;
   cursor: pointer; 
   transition: background 0.3s ease, transform 0.2s ease, opacity 0.2s ease;
+}
+
+.modal-close {
+  border: 0;
+  background: transparent;
+  font: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid #f59e0b;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 /* GitHub */
