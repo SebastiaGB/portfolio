@@ -649,7 +649,7 @@ footer {
   box-shadow: 0 20px 48px rgba(2, 6, 23, 0.3);
   width: 100%;
   max-width: 420px;
-  min-height: 320px;
+  min-height: 0;
   font-family: 'Fira Code', monospace;
   margin: 0.75rem 0 0;
   color: #334155;
