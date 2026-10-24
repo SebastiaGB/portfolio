@@ -2,7 +2,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.getElementById("projects-container");
   const tabs = document.querySelectorAll("#tabs .tab");
-  const backToTop = document.getElementById("back-to-top");
 
   // ===== Modal elements =====
   const modal = document.getElementById("project-modal");
@@ -146,22 +145,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (section) section.scrollIntoView({ behavior: "smooth" });
   }
   window.scrollToSection = scrollToSection;
-
-  // ====================== Botón volver arriba ======================
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) backToTop.classList.add("show");
-        else backToTop.classList.remove("show");
-      });
-    },
-    { threshold: 0.1 }
-  );
-  observer.observe(document.querySelector("#hero"));
-
-  backToTop.addEventListener("click", () =>
-    window.scrollTo({ top: 0, behavior: "smooth" })
-  );
 
   // ====================== Renderizar proyectos ======================
   function renderProjects(filteredProjects) {

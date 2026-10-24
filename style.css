@@ -611,35 +611,6 @@ footer {
   color: #cbd5e1;
 }
 
-/* ================= Back to Top ================= */
-#back-to-top {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  background: #3b82f6;
-  color: #fff;
-  border: none;
-  padding: 0.8rem 1rem;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 1.3rem;
-  display: block;
-  opacity: 0;
-  pointer-events: none;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  transition: all 0.3s ease, opacity 0.3s ease;
-  z-index: 1000;
-}
-
-#back-to-top.show {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-#back-to-top:hover {
-  transform: scale(1.05) translateY(-2px);
-}
-
 /* ================= Code Editor Card ================= */
 .code-editor-card {
   background: #fff;
